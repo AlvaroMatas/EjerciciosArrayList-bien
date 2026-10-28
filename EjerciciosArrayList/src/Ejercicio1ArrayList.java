@@ -76,11 +76,13 @@ public class Ejercicio1ArrayList {
 			}
 		}
 		
+		System.out.println("**********Resultados**********");
 		System.out.println("El arraylist es el siguiente: " + listaNumeros);
 		System.out.println("La suma de sus valores es: " + suma);
 		System.out.printf("La media del arraylist es: %.2f", media);
 		System.out.println();
 		System.out.println("En el arraylist hay " + numSupAMedia + " números superiores a la media");
+		System.out.println("******************************");
 		
 	}
 
