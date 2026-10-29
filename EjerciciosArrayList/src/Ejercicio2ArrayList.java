@@ -30,7 +30,31 @@ public class Ejercicio2ArrayList {
 			System.out.print("Introduzca acción (1-9): ");
 			eleccion = Integer.parseInt(entrada.readLine());
 			
+			switch (eleccion) {
+			case 1:
+				System.out.println("Vas a agregar un elemento" + agregarElemento());
+				break;
+			case 2:
+				System.out.println("Vas a buscar un elemento" + buscarElemento());
+				break;
+
+			default:
+				break;
+			}
 		} while (eleccion != 9);
+		
+	}
+
+	//Metodo para buscar elemento
+	private static int buscarElemento() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	//Metodo para agregar elementos
+	private static int agregarElemento() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
