@@ -33,17 +33,6 @@ public class Ejercicio2ArrayList {
 		} while (eleccion != 9);
 	}
 	
-	//Metodo para pedir la operacion a realizar
-	public static int eleccionMenu(int eleccion) {
-		
-		for (int i = 0; i <= 9; i++) {
-			if (i == eleccion) {
-				eleccion = i;
-				break;
-			}
-		}
-		
-		return eleccion;
-	}
+	
 	
 }
