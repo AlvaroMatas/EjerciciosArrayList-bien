@@ -161,12 +161,13 @@ public class Ejercicio2ArrayList {
 			}
 		}
 		
-		if (posicion == -1) {
+		if (posicion == -1) { //Para que diga que no lo ha encontrado
 			System.out.println("Elemento no encontrado");
 			System.out.println();
 			return;
 		}
 		
+		//Todo esto es para pedir el numero a cambiar si loencuentra
 		System.out.print("Elemento encontrado. Dime porque elemento lo quieres cambiar: ");
 		double elementoNuevo = Double.parseDouble(entrada.readLine().replace(',', '.'));
 		
