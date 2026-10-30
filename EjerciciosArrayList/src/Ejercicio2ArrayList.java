@@ -1,9 +1,13 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class Ejercicio2ArrayList {
 
+	static BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	static ArrayList<Double> lista = new ArrayList<Double>();
+	
 	public static void main(String[] args) throws IOException {
 		menu();
 
@@ -11,7 +15,6 @@ public class Ejercicio2ArrayList {
 	
 	//Metodo para mostrar el menu y se elija la opcion
 	public static void menu() throws IOException {
-		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 		int eleccion;
 		
 		do {
@@ -32,10 +35,39 @@ public class Ejercicio2ArrayList {
 			
 			switch (eleccion) {
 			case 1:
-				System.out.println("Vas a agregar un elemento" + agregarElemento());
+				System.out.println("Vas a agregar un elemento");
+				agregarElemento();
 				break;
 			case 2:
-				System.out.println("Vas a buscar un elemento" + buscarElemento());
+				System.out.println("Vas a buscar un elemento");
+				buscarElemento();
+				break;
+			case 3:
+				System.out.println("Vas a modificar un elemento");
+				modificarElemento();
+				break;
+			case 4:
+				System.out.println("Vas a eliminar un elemento");
+				eliminarElemento();
+				break;
+			case 5:
+				System.out.println("Vas a insertar un elemento");
+				insertarElemento();
+				break;
+			case 6:
+				System.out.println("Vas a mostrar los elementos");
+				mostrarElementos();
+				break;
+			case 7:
+				System.out.println("Vas a mostrar en orden ascendente");
+				mostrarAscendente();
+				break;
+			case 8:
+				System.out.println("Vas a mostrar en orden descendente");
+				mostrarDescendente();
+				break;
+			case 9:
+				System.out.println("*****SALIENDO DEL PROGRAMA*****");
 				break;
 
 			default:
@@ -44,19 +76,63 @@ public class Ejercicio2ArrayList {
 		} while (eleccion != 9);
 		
 	}
+	
+	//Metodo para agregar elementos
+	private static void agregarElemento() throws IOException {
+		/* Solicitará al usuario el elemento a insertar al final de la lista. */
+		System.out.print("Dime el número que quieres añadir: ");
+		double numero = Double.parseDouble(entrada.readLine().replace(',', '.')); //Replace para que deje poner comas en vez de puntos
+		
+		lista.add(numero);
+		
+	}
 
 	//Metodo para buscar elemento
-	private static int buscarElemento() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	//Metodo para agregar elementos
-	private static int agregarElemento() {
-		// TODO Auto-generated method stub
-		return 0;
+	private static void buscarElemento() {
+		/* Solicitará al usuario el elemento a buscar en la lista. Si lo encuentra, mostrará por
+pantalla la posición en la que se encuentra */
+		
 	}
 	
+	//Metodo para mostrar en orden descendente
+	private static void mostrarDescendente() {
+			// TODO Auto-generated method stub
+			
+	}
 	
+	//Mostrar array en orden ascendente
+	private static void mostrarAscendente() {
+			// TODO Auto-generated method stub
+			
+	}
+	
+	//Metodo para mostrar un elemento
+	private static void mostrarElementos() {
+		/* Utiliza el método que prefieras para recorrer la lista. Deberá mostrar si la lista está
+		vacía. */
+			
+	}
+	
+	//Metodo para insertar un elemento
+	private static void insertarElemento() {
+		/*  Solicitará al usuario el elemento a insertar y la posición en la que se insertará. Se
+		debe comprobar si la posición es correcta, o dará un error.
+		 */
+		
+	}
+	
+	//Metodo para eliminar un elemento
+	private static void eliminarElemento() {
+		/* Solicitará al usuario el elemento a eliminar de la lista. */
+		
+		
+	}
+	
+	//Metodo para modificar elemento
+	private static void modificarElemento() {
+		/* Solicitará al usuario el elemento a modificar en la lista. Si lo encuentra, solicitará al
+		usuario el nuevo valor del elemento de la lista. */
+		
+	}
 	
 }
