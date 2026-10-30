@@ -107,12 +107,31 @@ public class Ejercicio2ArrayList {
 	}
 
 	// Metodo para buscar elemento
-	private static void buscarElemento() { // 2
+	private static void buscarElemento() throws IOException { // 2
 		/*
 		 * Solicitará al usuario el elemento a buscar en la lista. Si lo encuentra,
 		 * mostrará por pantalla la posición en la que se encuentra
 		 */
+		if (lista.isEmpty()) {
+			System.out.println("La lista está vacia");
+			return;
+		}
 
+		System.out.print("Dime el elemento que quieres buscar: ");
+		double elemento = Double.parseDouble(entrada.readLine().replace(',', '.'));
+		int posicion = -1;
+		
+		for (int i = 0; i < lista.size(); i++) {
+			if (lista.get(i) == elemento) { //El .get devuelve el numero que hay en la posicion que le pasemos
+				posicion = i;
+			}
+		}
+		
+		if (elemento != -1) {
+			System.out.println("La posición de " + elemento + " es: " + posicion);
+		}else {
+			System.out.println("El elemento " + elemento + " no está en la lista");
+		}
 	}
 
 	// Metodo para mostrar en orden descendente
