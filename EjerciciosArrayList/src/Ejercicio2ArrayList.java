@@ -171,7 +171,7 @@ public class Ejercicio2ArrayList {
 		System.out.print("Elemento encontrado. Dime porque elemento lo quieres cambiar: ");
 		double elementoNuevo = Double.parseDouble(entrada.readLine().replace(',', '.'));
 		
-		lista.set(posicion, elementoNuevo);
+		lista.set(posicion, elementoNuevo); //Cambia el elemento de la posicion que le digamos por el nuevo que le digamos
 		System.out.println("*****Elemento cambiado con éxito*****");
 		System.out.println();
 		
