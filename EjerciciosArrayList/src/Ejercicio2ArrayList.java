@@ -103,6 +103,8 @@ public class Ejercicio2ArrayList {
 																					// en vez de puntos
 
 		lista.add(numero);
+		System.out.println("Elemento añadido con éxito");
+		System.out.println();
 
 	}
 
@@ -123,15 +125,55 @@ public class Ejercicio2ArrayList {
 		
 		for (int i = 0; i < lista.size(); i++) {
 			if (lista.get(i) == elemento) { //El .get devuelve el numero que hay en la posicion que le pasemos
-				posicion = i;
+				posicion = i + 1;
 			}
 		}
 		
 		if (elemento != -1) {
 			System.out.println("La posición de " + elemento + " es: " + posicion);
+			System.out.println();
 		}else {
 			System.out.println("El elemento " + elemento + " no está en la lista");
+			System.out.println();
 		}
+	}
+	
+	// Metodo para modificar elemento
+	private static void modificarElemento() throws IOException { // 3
+		/*
+		 * Solicitará al usuario el elemento a modificar en la lista. Si lo encuentra,
+		 * solicitará al usuario el nuevo valor del elemento de la lista.
+		 */
+
+		if (lista.isEmpty()) {
+			System.out.println("La lista está vacia");
+			return;
+		}
+		
+		System.out.print("Dime el elemento que quieres modificar: ");
+		double elementoModif = Double.parseDouble(entrada.readLine().replace(',', '.'));
+		int posicion = -1;
+		
+		for (int i = 0; i < lista.size(); i++) {
+			if (lista.get(i) == elementoModif) {
+				posicion = i;
+				break; //Para que cuando encuentre el numero deje de recorrer mas el arrayList
+			}
+		}
+		
+		if (posicion == -1) {
+			System.out.println("Elemento no encontrado");
+			System.out.println();
+			return;
+		}
+		
+		System.out.print("Elemento encontrado. Dime porque elemento lo quieres cambiar: ");
+		double elementoNuevo = Double.parseDouble(entrada.readLine().replace(',', '.'));
+		
+		lista.set(posicion, elementoNuevo);
+		System.out.println("*****Elemento cambiado con éxito*****");
+		System.out.println();
+		
 	}
 
 	// Metodo para mostrar en orden descendente
@@ -167,15 +209,6 @@ public class Ejercicio2ArrayList {
 	// Metodo para eliminar un elemento
 	private static void eliminarElemento() { // 4
 		/* Solicitará al usuario el elemento a eliminar de la lista. */
-
-	}
-
-	// Metodo para modificar elemento
-	private static void modificarElemento() { // 3
-		/*
-		 * Solicitará al usuario el elemento a modificar en la lista. Si lo encuentra,
-		 * solicitará al usuario el nuevo valor del elemento de la lista.
-		 */
 
 	}
 
