@@ -7,32 +7,24 @@ public class Ejercicio2ArrayList {
 
 	static BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 	static ArrayList<Double> lista = new ArrayList<Double>();
-	
+
 	public static void main(String[] args) throws IOException {
 		menu();
 
 	}
-	
-	//Metodo para mostrar el menu y se elija la opcion
+
+	// Metodo para mostrar el menu y se elija la opcion
 	public static void menu() throws IOException {
-		int eleccion;
-		
+		int eleccion = 0;
+
 		do {
-			
-			System.out.println("*****ACCIONES***** \n"
-					+ "[1] Agregar elemento\n"
-					+ "[2] Buscar elemento\n"
-					+ "[3] Modificar elemento\n"
-					+ "[4] Eliminar elemento\n"
-					+ "[5] Insertar elemento\n"
-					+ "[6] Mostrar elementos\n"
-					+ "[7] Orden ascendente\n"
-					+ "[8] Orden descendente\n"
-					+ "[9] Salir\n");
-			
-			System.out.print("Introduzca acción (1-9): ");
-			eleccion = Integer.parseInt(entrada.readLine());
-			
+
+			System.out.println("*****ACCIONES***** \n" + "[1] Agregar elemento\n" + "[2] Buscar elemento\n"
+					+ "[3] Modificar elemento\n" + "[4] Eliminar elemento\n" + "[5] Insertar elemento\n"
+					+ "[6] Mostrar elementos\n" + "[7] Orden ascendente\n" + "[8] Orden descendente\n" + "[9] Salir\n");
+
+			eleccion = pedirEleccion();
+
 			switch (eleccion) {
 			case 1:
 				System.out.println("Vas a agregar un elemento");
@@ -73,66 +65,99 @@ public class Ejercicio2ArrayList {
 			default:
 				break;
 			}
+
 		} while (eleccion != 9);
-		
-	}
-	
-	//Metodo para agregar elementos
-	private static void agregarElemento() throws IOException {
-		/* Solicitará al usuario el elemento a insertar al final de la lista. */
-		System.out.print("Dime el número que quieres añadir: ");
-		double numero = Double.parseDouble(entrada.readLine().replace(',', '.')); //Replace para que deje poner comas en vez de puntos
-		
-		lista.add(numero);
-		
+
 	}
 
-	//Metodo para buscar elemento
-	private static void buscarElemento() {
-		/* Solicitará al usuario el elemento a buscar en la lista. Si lo encuentra, mostrará por
-pantalla la posición en la que se encuentra */
+	//Metodo para pedir la eleccion y comprobar que esté bien
+	private static int pedirEleccion() throws IOException {
 		
+		int opcion = 0;
+		boolean valida = false;
+		
+		while (!valida) {
+			try {
+				System.out.print("Introduzca acción (1-9): ");
+				opcion = Integer.parseInt(entrada.readLine());
+				
+				if (opcion >= 1 && opcion <= 9) {
+					valida = true;
+				}
+				else {
+					System.out.println("ERROR: tienes que introducir un numero entre 1 y 9");
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("Debes introducir un numero entre 1 y 9");
+			}
+		}
+		
+		return opcion;
 	}
-	
-	//Metodo para mostrar en orden descendente
-	private static void mostrarDescendente() {
-			// TODO Auto-generated method stub
-			
+
+	// Metodo para agregar elementos
+	private static void agregarElemento() throws IOException { // 1
+		/* Solicitará al usuario el elemento a insertar al final de la lista. */
+		System.out.print("Dime el número que quieres añadir: ");
+		double numero = Double.parseDouble(entrada.readLine().replace(',', '.')); // Replace para que deje poner comas
+																					// en vez de puntos
+
+		lista.add(numero);
+
 	}
-	
-	//Mostrar array en orden ascendente
-	private static void mostrarAscendente() {
-			// TODO Auto-generated method stub
-			
-	}
-	
-	//Metodo para mostrar un elemento
-	private static void mostrarElementos() {
-		/* Utiliza el método que prefieras para recorrer la lista. Deberá mostrar si la lista está
-		vacía. */
-			
-	}
-	
-	//Metodo para insertar un elemento
-	private static void insertarElemento() {
-		/*  Solicitará al usuario el elemento a insertar y la posición en la que se insertará. Se
-		debe comprobar si la posición es correcta, o dará un error.
+
+	// Metodo para buscar elemento
+	private static void buscarElemento() { // 2
+		/*
+		 * Solicitará al usuario el elemento a buscar en la lista. Si lo encuentra,
+		 * mostrará por pantalla la posición en la que se encuentra
 		 */
-		
+
 	}
-	
-	//Metodo para eliminar un elemento
-	private static void eliminarElemento() {
+
+	// Metodo para mostrar en orden descendente
+	private static void mostrarDescendente() { // 8
+		// TODO Auto-generated method stub
+
+	}
+
+	// Mostrar array en orden ascendente
+	private static void mostrarAscendente() { // 7
+		// TODO Auto-generated method stub
+
+	}
+
+	// Metodo para mostrar un elemento
+	private static void mostrarElementos() { // 6
+		/*
+		 * Utiliza el método que prefieras para recorrer la lista. Deberá mostrar si la
+		 * lista está vacía.
+		 */
+
+	}
+
+	// Metodo para insertar un elemento
+	private static void insertarElemento() { // 5
+		/*
+		 * Solicitará al usuario el elemento a insertar y la posición en la que se
+		 * insertará. Se debe comprobar si la posición es correcta, o dará un error.
+		 */
+
+	}
+
+	// Metodo para eliminar un elemento
+	private static void eliminarElemento() { // 4
 		/* Solicitará al usuario el elemento a eliminar de la lista. */
-		
-		
+
 	}
-	
-	//Metodo para modificar elemento
-	private static void modificarElemento() {
-		/* Solicitará al usuario el elemento a modificar en la lista. Si lo encuentra, solicitará al
-		usuario el nuevo valor del elemento de la lista. */
-		
+
+	// Metodo para modificar elemento
+	private static void modificarElemento() { // 3
+		/*
+		 * Solicitará al usuario el elemento a modificar en la lista. Si lo encuentra,
+		 * solicitará al usuario el nuevo valor del elemento de la lista.
+		 */
+
 	}
-	
+
 }
