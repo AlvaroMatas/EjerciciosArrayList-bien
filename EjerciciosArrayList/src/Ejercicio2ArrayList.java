@@ -249,6 +249,26 @@ public class Ejercicio2ArrayList {
 		System.out.println();
 	}
 	
+	// Metodo para mostrar un elemento
+	private static void mostrarElementos() { // 6
+		/*
+		 * Utiliza el método que prefieras para recorrer la lista. Deberá mostrar si la
+		 * lista está vacía.
+		 */
+		
+		if (lista.isEmpty()) {
+			System.out.println("La lista está vacia");
+			System.out.println();
+			return;
+		}
+		
+		for (int i = 0; i < lista.size(); i++) {
+			System.out.println("Posición " + i + ": " + lista.get(i));
+		}
+		System.out.println();
+
+	}
+	
 	// Mostrar array en orden ascendente
 	private static void mostrarAscendente() { // 7
 		
@@ -263,7 +283,7 @@ public class Ejercicio2ArrayList {
 		
 		for (int i = 0; i < lista.size(); i++) {
 			
-			System.out.println("Elemento " + i + ": " + lista.get(i));
+			System.out.println("Posición " + i + ": " + lista.get(i));
 
 		}
 		System.out.println();
@@ -273,15 +293,19 @@ public class Ejercicio2ArrayList {
 	// Metodo para mostrar en orden descendente
 	private static void mostrarDescendente() { // 8
 		
-
-	}
-
-	// Metodo para mostrar un elemento
-	private static void mostrarElementos() { // 6
-		/*
-		 * Utiliza el método que prefieras para recorrer la lista. Deberá mostrar si la
-		 * lista está vacía.
-		 */
+		if (lista.isEmpty()) {
+			System.out.println("La lista está vacia");
+			System.out.println();
+			return;
+		}
+		
+		Comparator<Double> comparador = Collections.reverseOrder();
+		Collections.sort(lista, comparador);
+		
+		for (int i = 0; i < lista.size(); i++) {
+			System.out.println("Posición " + i + ": " + lista.get(i));
+		}
+		System.out.println();
 
 	}
 
