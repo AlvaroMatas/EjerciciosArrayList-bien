@@ -262,8 +262,11 @@ public class Ejercicio2ArrayList {
 			return;
 		}
 		
+		//Copio la lista para que al mostrar el original no se cambie
+		ArrayList<Double> listaCopia = lista;
+		
 		for (int i = 0; i < lista.size(); i++) {
-			System.out.println("Posición " + i + ": " + lista.get(i));
+			System.out.println("Posición " + i + ": " + listaCopia.get(i));
 		}
 		System.out.println();
 
@@ -278,12 +281,15 @@ public class Ejercicio2ArrayList {
 			return;
 		}
 		
-		Collections.sort(lista);
+		//Copio la lista para que al mostrar el original no se cambie
+		ArrayList<Double> listaMenorAMayor = lista;
+		
+		Collections.sort(listaMenorAMayor);
 		System.out.println("La lista ordenada de menor a mayor es esta: ");
 		
 		for (int i = 0; i < lista.size(); i++) {
 			
-			System.out.println("Posición " + i + ": " + lista.get(i));
+			System.out.println("Posición " + i + ": " + listaMenorAMayor.get(i));
 
 		}
 		System.out.println();
@@ -299,11 +305,14 @@ public class Ejercicio2ArrayList {
 			return;
 		}
 		
+		//Copio la lista para que al mostrar el original no se cambie
+		ArrayList<Double> listaMayorAMenor = lista;
+		
 		Comparator<Double> comparador = Collections.reverseOrder();
-		Collections.sort(lista, comparador);
+		Collections.sort(listaMayorAMenor, comparador);
 		
 		for (int i = 0; i < lista.size(); i++) {
-			System.out.println("Posición " + i + ": " + lista.get(i));
+			System.out.println("Posición " + i + ": " + listaMayorAMenor.get(i));
 		}
 		System.out.println();
 
