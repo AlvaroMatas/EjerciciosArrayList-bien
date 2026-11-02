@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Ejercicio2ArrayList {
 
@@ -245,16 +248,31 @@ public class Ejercicio2ArrayList {
 		System.out.println("*****Elemento añadido correctamente*****");
 		System.out.println();
 	}
+	
+	// Mostrar array en orden ascendente
+	private static void mostrarAscendente() { // 7
+		
+		if (lista.isEmpty()) {
+			System.out.println("La lista está vacia");
+			System.out.println();
+			return;
+		}
+		
+		Collections.sort(lista);
+		System.out.println("La lista ordenada de menor a mayor es esta: ");
+		
+		for (int i = 0; i < lista.size(); i++) {
+			
+			System.out.println("Elemento " + i + ": " + lista.get(i));
 
-	// Metodo para mostrar en orden descendente
-	private static void mostrarDescendente() { // 8
-		// TODO Auto-generated method stub
+		}
+		System.out.println();
 
 	}
 
-	// Mostrar array en orden ascendente
-	private static void mostrarAscendente() { // 7
-		// TODO Auto-generated method stub
+	// Metodo para mostrar en orden descendente
+	private static void mostrarDescendente() { // 8
+		
 
 	}
 
