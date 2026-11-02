@@ -212,13 +212,38 @@ public class Ejercicio2ArrayList {
 	}
 	
 	// Metodo para insertar un elemento
-	private static void insertarElemento() { // 5
+	private static void insertarElemento() throws IOException { // 5
 		/*
 		 * Solicitará al usuario el elemento a insertar y la posición en la que se
 		 * insertará. Se debe comprobar si la posición es correcta, o dará un error.
 		 */
-
 		
+		System.out.print("Dime el elemento que quieres insertar: ");
+		double elementoNuevo = Double.parseDouble(entrada.readLine().replace(',', '.'));
+		
+		//Para pedir la posicion del elemento
+		boolean posicionBien = false;
+		int posElementoNuevo = 0;
+		
+		while (!posicionBien) {
+			try {
+				System.out.print("Dime la posición en la que quieres insertar este elemento (De 0 a" + lista.size() + ": ");
+				posElementoNuevo = Integer.parseInt(entrada.readLine());
+				
+				if (posElementoNuevo >= 0 && posElementoNuevo <= lista.size()) {
+					posicionBien = true;
+				}else {
+					System.out.println("ERROR: la posición debe estar entre 0 y " + lista.size());
+				}
+				
+			} catch (NumberFormatException e) {
+				System.out.println("La posición tiene que ser un número entero");			}
+		}
+		
+		//Añadimos el elemento en la posicion
+		lista.add(posElementoNuevo, elementoNuevo);
+		System.out.println("*****Elemento añadido correctamente*****");
+		System.out.println();
 	}
 
 	// Metodo para mostrar en orden descendente
