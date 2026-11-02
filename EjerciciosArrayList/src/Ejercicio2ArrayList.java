@@ -227,7 +227,7 @@ public class Ejercicio2ArrayList {
 		
 		while (!posicionBien) {
 			try {
-				System.out.print("Dime la posición en la que quieres insertar este elemento (De 0 a" + lista.size() + ": ");
+				System.out.print("Dime la posición en la que quieres insertar este elemento (De 0 a " + lista.size() + "): ");
 				posElementoNuevo = Integer.parseInt(entrada.readLine());
 				
 				if (posElementoNuevo >= 0 && posElementoNuevo <= lista.size()) {
