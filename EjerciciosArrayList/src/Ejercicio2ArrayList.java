@@ -103,7 +103,7 @@ public class Ejercicio2ArrayList {
 																					// en vez de puntos
 
 		lista.add(numero);
-		System.out.println("Elemento añadido con éxito");
+		System.out.println("*****Elemento añadido con éxito*****");
 		System.out.println();
 
 	}
@@ -116,6 +116,7 @@ public class Ejercicio2ArrayList {
 		 */
 		if (lista.isEmpty()) {
 			System.out.println("La lista está vacia");
+			System.out.println();
 			return;
 		}
 
@@ -147,6 +148,7 @@ public class Ejercicio2ArrayList {
 
 		if (lista.isEmpty()) {
 			System.out.println("La lista está vacia");
+			System.out.println();
 			return;
 		}
 		
@@ -176,6 +178,48 @@ public class Ejercicio2ArrayList {
 		System.out.println();
 		
 	}
+	
+	// Metodo para eliminar un elemento
+	private static void eliminarElemento() throws IOException{ // 4
+		/* Solicitará al usuario el elemento a eliminar de la lista. */
+
+		if (lista.isEmpty()) {
+			System.out.println("La lista está vacia");
+			System.out.println();
+			return;
+		}
+		
+		System.out.print("Dime el elemento que quieres eliminar de la lista: ");
+		double elementoEliminar = Double.parseDouble(entrada.readLine().replace(',', '.'));
+		int numero = -1;
+		
+		for (int i = 0; i < lista.size(); i++) {
+			if (lista.get(i) == elementoEliminar) {
+				numero = i;
+				break;
+			}
+		}
+		
+		if (numero == -1) {
+			System.out.println("No se ha encontrado el número");
+			System.out.println();
+			return;
+		}
+		
+		lista.remove(numero);
+		System.out.println("*****Elemento eliminado correctamente*****");
+		System.out.println();
+	}
+	
+	// Metodo para insertar un elemento
+	private static void insertarElemento() { // 5
+		/*
+		 * Solicitará al usuario el elemento a insertar y la posición en la que se
+		 * insertará. Se debe comprobar si la posición es correcta, o dará un error.
+		 */
+
+		
+	}
 
 	// Metodo para mostrar en orden descendente
 	private static void mostrarDescendente() { // 8
@@ -195,21 +239,6 @@ public class Ejercicio2ArrayList {
 		 * Utiliza el método que prefieras para recorrer la lista. Deberá mostrar si la
 		 * lista está vacía.
 		 */
-
-	}
-
-	// Metodo para insertar un elemento
-	private static void insertarElemento() { // 5
-		/*
-		 * Solicitará al usuario el elemento a insertar y la posición en la que se
-		 * insertará. Se debe comprobar si la posición es correcta, o dará un error.
-		 */
-
-	}
-
-	// Metodo para eliminar un elemento
-	private static void eliminarElemento() { // 4
-		/* Solicitará al usuario el elemento a eliminar de la lista. */
 
 	}
 
