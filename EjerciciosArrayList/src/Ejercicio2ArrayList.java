@@ -263,7 +263,7 @@ public class Ejercicio2ArrayList {
 		}
 		
 		//Copio la lista para que al mostrar el original no se cambie
-		ArrayList<Double> listaCopia = lista;
+		ArrayList<Double> listaCopia = (ArrayList<Double>)lista.clone();
 		
 		for (int i = 0; i < lista.size(); i++) {
 			System.out.println("Posición " + i + ": " + listaCopia.get(i));
@@ -282,7 +282,7 @@ public class Ejercicio2ArrayList {
 		}
 		
 		//Copio la lista para que al mostrar el original no se cambie
-		ArrayList<Double> listaMenorAMayor = lista;
+		ArrayList<Double> listaMenorAMayor = (ArrayList<Double>)lista.clone();
 		
 		Collections.sort(listaMenorAMayor);
 		System.out.println("La lista ordenada de menor a mayor es esta: ");
@@ -306,7 +306,7 @@ public class Ejercicio2ArrayList {
 		}
 		
 		//Copio la lista para que al mostrar el original no se cambie
-		ArrayList<Double> listaMayorAMenor = lista;
+		ArrayList<Double> listaMayorAMenor = (ArrayList<Double>)lista.clone();
 		
 		Comparator<Double> comparador = Collections.reverseOrder();
 		Collections.sort(listaMayorAMenor, comparador);
