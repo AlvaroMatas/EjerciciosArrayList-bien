@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+import javax.swing.JOptionPane;
 
 public class Principal {
 
@@ -11,6 +15,7 @@ public class Principal {
 	static ArrayList<Alumno> notasExamen = new ArrayList<Alumno>();
 	
 	public static void main(String[] args) throws IOException {
+		
 		int opcion = 0;
 		
 		do {
@@ -62,23 +67,49 @@ public class Principal {
 	}
 	
 	//Metodo para agregar notas
-	public static void agregarNotas() {
-		double nota;
+	public static void agregarNotas() throws IOException {
+		double nota = 0;
 		String nombre;
+		boolean notaValida = false;
 		
+		System.out.print("Nombre del alumno: ");	
+		nombre = entrada.readLine();
 		
+		while (!notaValida) {
+			try {
+				System.out.print("Nota: ");
+				nota = Double.parseDouble(entrada.readLine().replace(',', '.'));
+				
+				if (nota >= 0 && nota <= 10) {
+					notaValida = true;
+				}else {
+					System.out.println("ERROR: La nota tiene que estar entre 0 y 10");
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("ERROR: Inroduce valores numericos");
+			}
+		}
+		
+		Alumno alumno = new Alumno(nombre, nota);
+		
+		notasExamen.add(alumno);
 		
 	}
 	
 	//Metodo para mostrar ordenado por nombre
 	private static void mostrarOrdenPorNombre() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
 	//Metodo para mostrar ordenado por nota
 	private static void mostrarOrdenPorNota() {
-		// TODO Auto-generated method stub
+		
+		Collections.sort(notasExamen, Comparator.comparingDouble(Alumno::getNota));
+		
+		for (Alumno alumno : notasExamen) {
+			System.out.println("Alumno: " + alumno.getNombre() + " | " + "Nota: " + alumno.getNota());
+		}
 		
 	}
 	
