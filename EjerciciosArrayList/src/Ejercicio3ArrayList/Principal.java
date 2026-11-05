@@ -3,6 +3,7 @@ package Ejercicio3ArrayList;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -35,6 +36,7 @@ public class Principal {
 				break;	
 
 			default:
+				System.out.println("*****Saliendo del programa*****");
 				break;
 			}
 			
@@ -99,7 +101,11 @@ public class Principal {
 	//Metodo para mostrar ordenado por nombre
 	private static void mostrarOrdenPorNombre() {
 		
+		Collections.sort(notasExamen, Comparator.comparing(Alumno::getNombre, String.CASE_INSENSITIVE_ORDER));
 		
+		for (Alumno alumno : notasExamen) {
+			System.out.println("Alumno: " + alumno.getNombre() + " | " + "Nota: " + alumno.getNota());
+		}
 	}
 	
 	//Metodo para mostrar ordenado por nota
